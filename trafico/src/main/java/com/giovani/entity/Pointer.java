@@ -1,20 +1,16 @@
 package com.giovani.entity;
 
-import com.giovani.structs.linear.QueueManager;
+abstract public class Pointer {
+    protected char symbol;
+    protected boolean blocked;
 
-public class Intersection {
-    private char symbol;
-    private String name;
-    private QueueManager queueManager;
-
-    private int vehiclesCount;
-
-    public Intersection(char symbol) {
+    public Pointer(char symbol) {
         this.symbol = symbol;
-        this.name = "";
-        this.queueManager = new QueueManager();
-        this.vehiclesCount = 0;
+        //si blocked = true, no se puede entrar al punto, esta bloqueado
+        this.blocked = true;
     }
+
+    public abstract Vehicle process();
 
     public char getSymbol() {
         return symbol;
@@ -24,19 +20,11 @@ public class Intersection {
         this.symbol = symbol;
     }
 
-    public String getName() {
-        return name;
+    public boolean isBlocked() {
+        return blocked;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVehiclesCount() {
-        return vehiclesCount;
-    }
-
-    public void setVehiclesCount(int vehiclesCount) {
-        this.vehiclesCount = vehiclesCount;
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 }

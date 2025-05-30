@@ -4,10 +4,10 @@ import com.giovani.entity.Vehicle;
 
 import java.util.HashMap;
 
-public class VehicleManage {
+public class VehiclesManager {
     private final HashMap<String, Vehicle> vehicles;
 
-    public VehicleManage() {
+    public VehiclesManager() {
         this.vehicles = new HashMap<>();
     }
 
